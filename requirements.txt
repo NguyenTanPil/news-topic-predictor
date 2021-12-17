@@ -26,3 +26,6 @@ urllib3==1.26.7
 vncorenlp==1.0.3
 Werkzeug==2.0.2
 yarg==0.1.9
+python-crfsuite-0.9.7 
+pyvi-0.1.1 
+sklearn-crfsuite-0.3.6

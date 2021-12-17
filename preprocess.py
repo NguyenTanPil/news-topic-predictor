@@ -1,5 +1,5 @@
 import re
-from vncorenlp import VnCoreNLP
+from pyvi import ViTokenizer
 
 class Preprocess:
     def __init__(self):
@@ -179,9 +179,7 @@ class Preprocess:
         return " ".join(words)
 
     def tokenize(self, txt):
-        rdrsegmenter = VnCoreNLP("vncorenlp/VnCoreNLP-1.1.1.jar", annotators="wseg", max_heap_size='-Xmx500m')
-        txt_list = [' '.join(item) for item in rdrsegmenter.tokenize(txt)]
-        return ' '.join(txt_list)
+        return ViTokenizer.tokenize(txt)
 
     def remove_number(self, txt):
         txt= re.sub(r'\d+',"",txt)
