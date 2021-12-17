@@ -23,11 +23,11 @@ class Preprocess:
                     ['y', 'ỳ', 'ý', 'ỷ', 'ỹ', 'ỵ', 'y']]
         self.start_word_table = ['', 'f', 's', 'r', 'x', 'j']
 
-    def get_stopwords_to_list(self, path):
+    def get_stopwords_to_list(self):
         stopwords = []
-        with open(path, 'r', encoding="utf-8") as f:
-            stopwords_list = list(f)
-            stopwords = [re.sub('\n', '', word) for word in stopwords_list]
+        f =  open('./stopwords-nlp-vi.txt', 'r', encoding="utf-8")
+        stopwords_list = list(f)
+        stopwords = [re.sub('\n', '', word) for word in stopwords_list]
         return stopwords
 
     def loaddicchar(self):
@@ -169,7 +169,7 @@ class Preprocess:
         return txt
 
     def remove_stopwords(self, txt):
-        stopwords = self.get_stopwords_to_list('./stopwords-nlp-vi.txt')
+        stopwords = self.get_stopwords_to_list()
         split_words = txt.split()
         words = []
         for char in split_words:

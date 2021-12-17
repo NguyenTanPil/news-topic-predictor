@@ -31,26 +31,36 @@ const Body = () => {
   const [model, setModel] = useState('decision_tree');
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [topic, setTopic] = useState('');
+  const [topic, setTopic] = useState('...');
 
   const handleSubmit = async () => {
     setLoading(true);
 
-    const response = await fetch('/predict', {
-      method: 'POST',
-      body: JSON.stringify({
-        input,
-        model,
-      }),
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-    });
+    try {
+      const response = await fetch('/predict', {
+        method: 'POST',
+        body: JSON.stringify({
+          input,
+          model,
+        }),
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      });
 
-    const output = await response.json();
-    setTopic(output.result);
+      const output = await response.json();
+      setTopic(output.result);
+    } catch (error) {
+      setTopic('...');
+    }
 
     setLoading(false);
+  };
+
+  const handleReset = () => {
+    setModel('decision_tree');
+    setInput('');
+    setTopic('...');
   };
 
   return (
@@ -68,7 +78,7 @@ const Body = () => {
           />
         </Textarea>
       </Card>
-      <Card>
+      <Card hard={1}>
         <LabelsContainer>
           <Title>Labels</Title>
           <Labels>
@@ -132,7 +142,7 @@ const Body = () => {
             <Title>Actions</Title>
             <Actions>
               <Button onClick={handleSubmit}>Predict</Button>
-              <Button>Clean</Button>
+              <Button onClick={handleReset}>Clean</Button>
             </Actions>
           </ActionsContainer>
         </Predict>
@@ -147,7 +157,7 @@ const Body = () => {
               <img src={loadingIcon} alt="" />
             ) : (
               <p>
-                This news is <span>{topic || '...'}</span> Topic
+                This news is <span>{topic}</span> Topic
               </p>
             )}
           </div>

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  /* align-items: center; */
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -39,8 +38,21 @@ export const Card = styled.div`
   border-radius: 0.2rem;
   box-shadow: 0 0.2rem 0.5rem 0 rgb(0 0 0 / 16%),
     0 0.2rem 1rem 0 rgb(0 0 0 / 12%);
+
   margin: 0.7rem 0 1.4rem 0;
   padding: 2rem;
+
+  @media (min-width: 992px) {
+    max-height: ${(props) => (props.hard ? '52rem' : 'auto')};
+  }
+
+  @media (min-width: 1200px) {
+    max-height: ${(props) => (props.hard ? '50rem' : 'auto')};
+  }
+
+  @media (min-width: 1400px) {
+    max-height: ${(props) => (props.hard ? '48rem' : 'auto')};
+  }
 `;
 
 export const Textarea = styled.div`
