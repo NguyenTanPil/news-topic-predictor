@@ -17,12 +17,19 @@ export const Container = styled.header`
 
 export const Content = styled.div`
   background-color: #4db6ac;
+  color: #fff;
   padding: 1rem 0 2rem 0;
   text-align: center;
 
   h1 {
-    color: #fff;
     font-size: 4rem;
     line-height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+    font-style: italic;
+    margin: 0;
   }
 `;

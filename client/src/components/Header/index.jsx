@@ -4,7 +4,8 @@ function Header() {
   return (
     <Container>
       <Content>
-        <h1>Predict News Topics</h1>
+        <h1>News Topic Predictor</h1>
+        <p>Data Mining Project</p>
       </Content>
     </Container>
   );
