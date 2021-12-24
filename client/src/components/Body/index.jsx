@@ -67,11 +67,11 @@ const Body = () => {
     <Container>
       <Card>
         <Textarea>
-          <Title htmlFor="news">News</Title>
+          <Title htmlFor="news">News Input</Title>
           <TextareaAutosize
             id="news"
             name="news"
-            placeholder="Enter your news"
+            placeholder="Enter your news..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
             autoFocus

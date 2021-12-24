@@ -1,6 +1,6 @@
-import { Container, Content } from './HeaderStyles';
+import { Container, Content } from './HeaderStyles.js';
 
-function Header() {
+const Header = () => {
   return (
     <Container>
       <Content>
@@ -9,6 +9,6 @@ function Header() {
       </Content>
     </Container>
   );
-}
+};
 
 export default Header;

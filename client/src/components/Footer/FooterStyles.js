@@ -1,43 +1,38 @@
 import styled from 'styled-components';
+import { Content as Pattern } from '../Navbar/NavbarStyles';
 
 export const Container = styled.footer`
-  margin: 2rem auto;
-  max-width: 128rem;
-  padding: 0 2.4rem;
-  width: 90%;
-
-  @media (min-width: 768px) {
-    width: 85%;
-  }
-
-  @media (min-width: 992px) {
-    width: 80%;
-  }
+  background-color: #fff;
+  margin-top: 4rem;
+  width: 100%;
 `;
 
-export const Content = styled.div`
-  background-color: #4db6ac;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
+export const Content = styled(Pattern)`
+  align-items: center;
+  flex-direction: column;
+  padding: 0;
 
-  & > div {
-    width: 100%;
+  div {
+    width: 90%;
   }
 
-  @media (min-width: 768px) {
-    & > div {
-      width: 50%;
+  @media (min-width: 576px) {
+    flex-direction: row;
+
+    div {
+      width: 48%;
     }
   }
 `;
 
 export const About = styled.div`
-  color: #fff;
   font-weight: 400;
   letter-spacing: 0.1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 
   h2 {
+    color: #5c6ac4;
     font-size: 2.5rem;
     margin-bottom: 1.2rem;
     margin-top: 1.5rem;
@@ -49,7 +44,6 @@ export const About = styled.div`
   }
 
   a {
-    /* color: #29b6f6; */
     color: #fff;
     font-weight: 600;
     transition: all 0.3 ease;
@@ -60,6 +54,8 @@ export const About = styled.div`
   }
 
   @media (min-width: 768px) {
+    max-width: 50%;
+
     h2 {
       font-size: 3rem;
     }
@@ -71,9 +67,11 @@ export const About = styled.div`
   }
 `;
 
-export const Info = styled(About)`
-  p {
-    margin-bottom: 0.5rem;
-    margin-top: 0.5rem;
+export const Background = styled.div`
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    width: 90%;
   }
 `;

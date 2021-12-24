@@ -22,7 +22,7 @@ export const Wrap = styled.div`
 export const State = styled.div`
   label {
     display: inline-block;
-    color: ${(props) => (props.active ? '#26a69a' : '#797f86')};
+    color: ${(props) => (props.active ? '#5c6ac4' : '#797f86')};
     cursor: pointer;
     font-size: 1.4rem;
     font-weight: ${(props) => (props.active ? '500' : '400')};
@@ -42,10 +42,10 @@ export const State = styled.div`
       width: 1.4rem;
     }
     &:before {
-      border-color: ${(props) => (props.active ? '#26a69a' : '#797f86')};
+      border-color: ${(props) => (props.active ? '#5c6ac4' : '#797f86')};
     }
     &:after {
-      background-color: #26a69a;
+      background-color: #5c6ac4;
       transition: transform 0.25s ease;
       transform: ${(props) => (props.active ? 'scale(0.45)' : 'scale(0)')};
     }

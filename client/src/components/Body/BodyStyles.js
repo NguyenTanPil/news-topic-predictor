@@ -7,7 +7,6 @@ export const Container = styled.div`
   justify-content: space-between;
   margin: 2rem auto;
   max-width: 128rem;
-  padding: 0 2.4rem;
   width: 90%;
 
   & > div {
@@ -22,36 +21,35 @@ export const Container = styled.div`
     width: 80%;
 
     & > div {
-      width: 43%;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    & > div {
-      width: 45%;
+      width: 48%;
     }
   }
 `;
 
 export const Card = styled.div`
   background-color: #fff;
-  border-radius: 0.2rem;
-  box-shadow: 0 0.2rem 0.5rem 0 rgb(0 0 0 / 16%),
-    0 0.2rem 1rem 0 rgb(0 0 0 / 12%);
-
+  border-radius: 0.8rem;
+  box-shadow: 0 -0.6rem 1.6rem -0.6rem rgb(0 0 0 / 2%),
+    0 0.8rem 1.6rem -0.8rem rgb(0 0 0 / 3%),
+    0 1.3rem 2.7rem -0.5rem rgb(50 50 93 / 25%);
+  box-sizing: border-box;
   margin: 0.7rem 0 1.4rem 0;
   padding: 2rem;
 
+  @media (min-width: 576px) {
+    padding: 4rem;
+  }
+
   @media (min-width: 992px) {
-    max-height: ${(props) => (props.hard ? '52rem' : 'auto')};
+    max-height: ${(props) => (props.hard ? '56rem' : 'auto')};
   }
 
   @media (min-width: 1200px) {
-    max-height: ${(props) => (props.hard ? '50rem' : 'auto')};
+    max-height: ${(props) => (props.hard ? '54rem' : 'auto')};
   }
 
   @media (min-width: 1400px) {
-    max-height: ${(props) => (props.hard ? '48rem' : 'auto')};
+    max-height: ${(props) => (props.hard ? '52rem' : 'auto')};
   }
 `;
 
@@ -65,7 +63,7 @@ export const Textarea = styled.div`
 
   textarea {
     border: 0.2rem solid #e3e8ec;
-    color: #797f86;
+    color: #919191;
     font-size: 1.5rem;
     min-height: 15rem;
     outline: none;
@@ -74,7 +72,7 @@ export const Textarea = styled.div`
     transition: all 0.3 ease;
 
     &:focus {
-      border-color: #4db6ac;
+      border-color: #5c6ac4;
     }
   }
 `;
@@ -113,14 +111,16 @@ export const Models = styled.ul`
 `;
 
 export const Model = styled.li`
-  min-width: 13rem;
+  min-width: 12rem;
 `;
 
 export const Title = styled.label`
+  color: #5c6ac4;
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.1rem;
+  text-transform: capitalize;
 `;
 
 export const LabelsContainer = styled.div`
@@ -147,14 +147,13 @@ export const Labels = styled.ul`
 `;
 
 export const Label = styled.li`
-  color: #797f86;
   font-size: 1.4rem;
   min-width: 12rem;
   padding: 0.5rem 0;
   text-transform: capitalize;
 
   @media (min-width: 576px) {
-    min-width: 13rem;
+    min-width: 12rem;
   }
 `;
 
@@ -170,30 +169,19 @@ export const Actions = styled.div`
   button:first-child {
     margin-right: 2rem;
   }
-
-  button {
-    padding: 0 2rem;
-  }
-
-  @media (min-width: 576px) {
-    button {
-      padding: 0 2.8rem;
-    }
-  }
 `;
 
 export const Result = styled.div`
   position: relative;
 
   p {
-    color: #797f86;
     font-size: 1.4rem;
     margin: 0;
     min-width: 13rem;
     padding: 0.5rem 0;
 
     span {
-      color: #26a69a;
+      color: #5c6ac4;
       font-weight: 600;
       text-transform: capitalize;
     }
